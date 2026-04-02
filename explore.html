@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Explore</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+
+.card{
+  padding:40px;
+  font-size:20px;
+  border-radius:20px;
+  text-align:center;
+  background:linear-gradient(145deg,#12182a,#0f1424);
+}
+
+.card:hover{
+  transform:scale(1.03);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 style="text-align:center;">Explore</h1>
+
+<div class="grid">
+
+<div class="card" onclick="goToPage('members.html')">👥 Members</div>
+<div class="card" onclick="goToPage('past-events.html')">🎯 Past Events</div>
+<div class="card" onclick="goToPage('upcoming-events.html')">🚀 Upcoming Events</div>
+<div class="card" onclick="goToPage('sponsorship.html')">🤝 Sponsorship</div>
+<div class="card" onclick="goToPage('gallery.html')">🖼️ Gallery</div>
+<div class="card" onclick="goToPage('contact.html')">📞 Contact</div>
+<div class="card" onclick="goToPage('faq.html')">❓ FAQ</div>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+</head>
+<body style="background:#0b0f1a;color:white">
+
+<h2>Add Member</h2>
+
+<input id="name" placeholder="Name">
+<input id="team" placeholder="Team">
+<button onclick="addMember()">Add</button>
+
+<div id="list"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.addMember = async function(){
+  const name=document.getElementById("name").value;
+  const team=document.getElementById("team").value;
+
+  await addDoc(collection(db,"members"),{name,team});
+  load();
+}
+
+async function load(){
+  const snapshot = await getDocs(collection(db,"members"));
+  document.getElementById("list").innerHTML="";
+  snapshot.forEach(doc=>{
+    const d=doc.data();
+    document.getElementById("list").innerHTML+=`<p>${d.name}-${d.team}</p>`;
+  });
+}
+
+load();
+</script>
+
+</body>
+</html>

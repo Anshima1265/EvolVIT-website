@@ -5,21 +5,130 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-.team{
+
+/* 🌌 BACKGROUND */
+body{
+  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+              linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  overflow-x:hidden;
+}
+
+/* HEADING */
+h1{
+  text-align:center;
+  font-size:50px;
   margin-bottom:30px;
 }
 
-.team h2{
-  margin-bottom:10px;
-  color:#6c8cff;
+/* SECTION */
+.team{
+  margin-bottom:70px;
 }
 
-.member{
-  background:#1a2138;
-  padding:10px;
-  border-radius:10px;
-  margin:5px 0;
+.team h2{
+  margin-bottom:25px;
+  color:#b388ff;
+  text-align:center;
+  font-size:34px;
 }
+
+/* GRID */
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* CENTER */
+.center-grid{
+  display:flex;
+  justify-content:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+  .team-grid{grid-template-columns:1fr;}
+}
+
+/* CARD */
+.member-card{
+  background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.4s;
+  position:relative;
+}
+
+/* CARD HOVER */
+.member-card:hover{
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:0 25px 50px rgba(0,0,0,0.8);
+}
+
+/* IMAGE */
+.member-card img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  position:relative;
+  z-index:1;
+}
+
+/* 🔥 GLOW ANIMATED BORDER */
+.member-card::before{
+  content:"";
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:conic-gradient(#6a0dad,#4cc9f0,#6a0dad);
+  animation:rotate 4s linear infinite;
+  z-index:0;
+}
+
+/* INNER MASK (so glow looks ring-like) */
+.member-card::after{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  top:25px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0b1a3a;
+  z-index:0;
+}
+
+/* ANIMATION */
+@keyframes rotate{
+  0%{transform:translateX(-50%) rotate(0deg);}
+  100%{transform:translateX(-50%) rotate(360deg);}
+}
+
+/* TEXT */
+.member-card h3{
+  margin-top:10px;
+  font-size:18px;
+  color:#ffffff;
+}
+
+.member-card p{
+  font-size:14px;
+  color:#b8c1ff;
+}
+
 </style>
 </head>
 
@@ -27,48 +136,110 @@
 
 <div class="container">
 
-<h1>Our Team</h1>
+<h1>✨ Our Team</h1>
 
+<!-- PRESIDENT -->
 <div class="team">
 <h2>President</h2>
-<div class="member">Name Here</div>
+<div class="center-grid">
+<div class="member-card">
+<img src="images/default.png">
+<h3>Name Here</h3>
+<p>President</p>
+</div>
+</div>
 </div>
 
+<!-- VICE PRESIDENT -->
 <div class="team">
 <h2>Vice President</h2>
-<div class="member">Name Here</div>
+<div class="center-grid">
+<div class="member-card">
+<img src="images/default.png">
+<h3>Name Here</h3>
+<p>Vice President</p>
+</div>
+</div>
 </div>
 
+<!-- GENERAL SECRETARY -->
 <div class="team">
 <h2>General Secretary</h2>
-<div class="member">Name Here</div>
+<div class="center-grid">
+<div class="member-card">
+<img src="images/default.png">
+<h3>Name Here</h3>
+<p>General Secretary</p>
+</div>
+</div>
 </div>
 
-<div class="team">
-<h2>Event Management Team</h2>
-<div class="member">Member 1</div>
-<div class="member">Member 2</div>
-</div>
-
+<!-- TECH TEAM -->
 <div class="team">
 <h2>Technical Team</h2>
-<div class="member">Developer 1</div>
+<div class="team-grid">
+<div class="member-card"><img src="images/default.png"><h3>Rishi Dewangan</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Aditya</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Nikhil</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Prathmesh</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Mohit</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Shubh</h3></div>
+</div>
 </div>
 
+<!-- MEDIA TEAM -->
+<div class="team">
+<h2>Media Team</h2>
+<div class="team-grid">
+<div class="member-card"><img src="images/default.png"><h3>Vaishnavi</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Om</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Tanisha</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Gaurav</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Souhini</h3></div>
+</div>
+</div>
+
+<!-- DESIGN TEAM -->
 <div class="team">
 <h2>Design Team</h2>
-<div class="member">Designer 1</div>
+<div class="team-grid">
+<div class="member-card"><img src="images/default.png"><h3>Manasvi</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Sweety</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Arnav</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Shambhavi</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Gauri</h3></div>
+</div>
 </div>
 
+<!-- PR TEAM -->
 <div class="team">
 <h2>PR Team</h2>
-<div class="member">PR Member</div>
+<div class="team-grid">
+<div class="member-card"><img src="images/default.png"><h3>Pratik</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Sankalp</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Anshima</h3></div>
+</div>
 </div>
 
+<!-- EVENT TEAM -->
 <div class="team">
-<h2>Research Team</h2>
-<div class="member">Researcher</div>
+<h2>Event Management Team</h2>
+<div class="team-grid">
+<div class="member-card"><img src="images/default.png"><h3>Anunay</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Ravi</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Adarsh Shukla</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Siya</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Atharava</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Kreeti</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Ananya</h3></div>
+<div class="member-card"><img src="images/default.png"><h3>Sameeksha</h3></div>
 </div>
+</div>
+
+</div>
+
+</body>
+</html>
 
 </div>
 

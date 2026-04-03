@@ -3,68 +3,142 @@
 <head>
 <title>Evolvit Club</title>
 <link rel="stylesheet" href="css/style.css">
+
 <style>
+
+/* 🌌 BACKGROUND */
+body{
+  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+              linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  font-family:'Poppins',sans-serif;
+  overflow:hidden;
+}
+
+/* HERO SECTION */
 .hero{
-  height:90vh;
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:radial-gradient(circle at top,#1a2a6c,#0b0f1a);
+  position:relative;
 }
 
+/* GLOW BALLS */
+.hero::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:#6a0dad;
+  filter:blur(120px);
+  top:10%;
+  left:10%;
+  animation:move 8s infinite alternate;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:#4cc9f0;
+  filter:blur(120px);
+  bottom:10%;
+  right:10%;
+  animation:move 10s infinite alternate;
+}
+
+@keyframes move{
+  from{transform:translate(0,0);}
+  to{transform:translate(100px,80px);}
+}
+
+/* TITLE */
 .hero h1{
-  font-size:50px;
+  font-size:60px;
   letter-spacing:2px;
+  margin-bottom:10px;
 }
 
+/* SUBTITLE */
 .hero p{
-  color:#9aa3c7;
-  margin:10px 0 20px;
+  font-size:18px;
+  color:#b8c1ff;
+  margin-bottom:30px;
 }
 
+/* BUTTONS */
 .buttons button{
   margin:10px;
-  padding:12px 25px;
-  border:none;
+  padding:14px 30px;
   border-radius:30px;
+  border:none;
   cursor:pointer;
-  font-weight:bold;
+  font-size:16px;
+  transition:0.3s;
 }
 
+/* PRIMARY BUTTON */
 .explore-btn{
-  background:linear-gradient(90deg,#6c8cff,#00e0b8);
-  color:black;
-}
-
-.join-btn{
-  background:transparent;
-  border:1px solid #6c8cff;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
   color:white;
 }
+
+.explore-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(106,13,173,0.8);
+}
+
+/* SECONDARY BUTTON */
+.join-btn{
+  background:transparent;
+  border:1px solid #6a0dad;
+  color:white;
+}
+
+.join-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(76,201,240,0.6);
+}
+
+/* SCROLL ANIMATION */
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1s forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="nav">
-<h2>Evolvit Club</h2>
-</div>
-</header>
-
 <div class="hero">
-  <div>
+  <div class="fade-in">
+
     <h1>EVOLVIT CLUB 🚀</h1>
+
     <p>Evolving Students into Real-World Innovators</p>
 
     <div class="buttons">
       <button class="explore-btn" onclick="goToPage('explore.html')">Explore</button>
       <button class="join-btn" onclick="goToPage('join.html')">Join Now</button>
     </div>
+
   </div>
 </div>
 
 <script src="js/script.js"></script>
+
 </body>
 </html>

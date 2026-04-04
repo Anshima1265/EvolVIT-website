@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVOLART - Evolvit Club</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+                  radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+                  linear-gradient(180deg,#05070f,#0b0f1a);
+      color:#eaeaff;
+      font-family:'Poppins', sans-serif;
+      margin:0;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:100px 20px;
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+      border-radius:28px;
+      padding:40px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.45);
+      margin-bottom:35px;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:28px;
+      padding:2px;
+      background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+    }
+
+    .hero-card h1{
+      font-size:52px;
+      margin:0 0 12px;
+      color:#ffffff;
+      text-align:center;
+    }
+
+    .hero-card p.subtitle{
+      text-align:center;
+      font-size:22px;
+      font-weight:500;
+      color:#cfd3ff;
+      margin-top:10px;
+    }
+
+    .details-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:30px;
+      margin-top:30px;
+    }
+
+    .info-card,
+    .gallery-card{
+      background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+      border-radius:24px;
+      padding:30px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .info-card::before,
+    .gallery-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:24px;
+      padding:2px;
+      background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+      -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+    }
+
+    .section-title{
+      font-size:28px;
+      color:#b388ff;
+      margin-bottom:18px;
+    }
+
+    .info-card p{
+      color:#d8dcff;
+      line-height:1.9;
+      font-size:17px;
+      margin-bottom:18px;
+    }
+
+    .event-details{
+      margin-top:24px;
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:20px;
+    }
+
+    .event-details h3{
+      margin-top:0;
+      color:#ffffff;
+      font-size:22px;
+    }
+
+    .event-details p{
+      margin:10px 0;
+      font-size:16px;
+      color:#d8dcff;
+    }
+
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:25px;
+    }
+
+    .image-box{
+      width:100%;
+      height:250px;
+      border-radius:18px;
+      object-fit:cover;
+      cursor:pointer;
+      transition:transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+      box-shadow:0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .image-box:hover{
+      transform:scale(1.04);
+      box-shadow:
+        0 0 12px rgba(76, 201, 240, 0.4),
+        0 0 26px rgba(76, 201, 240, 0.28),
+        0 0 45px rgba(106, 13, 173, 0.25);
+      filter:brightness(1.06);
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 24px;
+      border-radius:30px;
+      border:none;
+      color:white;
+      background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+      cursor:pointer;
+      font-size:16px;
+      transition:0.3s ease;
+    }
+
+    .back-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 10px 25px rgba(76, 201, 240, 0.25);
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.9);
+      z-index:9999;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .lightbox.active{
+      display:flex;
+    }
+
+    .lightbox img{
+      max-width:90%;
+      max-height:85vh;
+      border-radius:16px;
+      box-shadow:
+        0 0 18px rgba(76, 201, 240, 0.35),
+        0 0 40px rgba(106, 13, 173, 0.25);
+    }
+
+    .close-lightbox{
+      position:absolute;
+      top:20px;
+      right:30px;
+      font-size:40px;
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+      line-height:1;
+    }
+
+    @media(max-width:900px){
+      .details-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:600px){
+      .hero-card h1{
+        font-size:38px;
+      }
+
+      .hero-card p.subtitle{
+        font-size:18px;
+      }
+
+      .image-box{
+        height:220px;
+      }
+
+      .section-title{
+        font-size:24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <h3>Evolvit Club</h3>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="past-events.html">Past Events</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="hero-card">
+      <h1>🎨 EVOLART</h1>
+      <p class="subtitle">Inaugural Event of EvolVIT Club</p>
+    </div>
+
+    <div class="details-grid">
+
+      <div class="info-card">
+        <div class="section-title">About the Event</div>
+
+        <p>
+          <strong>EVOLART</strong> marked the successful inauguration of the <strong>EvolVIT Club</strong>,
+          proudly recognized as the <strong>100th club of VIT Bhopal University</strong>.
+        </p>
+
+        <p>
+          This event set the foundation for a journey that blends creativity with innovation.
+        </p>
+
+        <p>
+          The event provided a vibrant platform for students to showcase their artistic talents
+          through various forms such as digital design, sketching, and creative expression.
+        </p>
+
+        <p>
+          Participants brought forward unique ideas with great enthusiasm, making the event both
+          engaging and inspiring.
+        </p>
+
+        <p>
+          As the inaugural event, EVOLART highlighted the club’s vision of fostering creativity,
+          collaboration, and technological excellence.
+        </p>
+
+        <div class="event-details">
+          <h3>✨ Event Details</h3>
+          <p>📍 <strong>Venue:</strong> AB1 Audi 2</p>
+          <p>📅 <strong>Date:</strong> February 2026</p>
+        </div>
+
+        <button class="back-btn" onclick="window.location.href='past-events.html'">
+          ← Back to Past Events
+        </button>
+      </div>
+
+      <div class="gallery-card">
+        <div class="section-title">Event Gallery</div>
+
+        <div class="gallery-grid">
+          <img src="images/evolart1.jpeg" class="image-box" alt="Evolart Image 1" onclick="openLightbox(this.src)">
+          <img src="images/evolart2.jpeg" class="image-box" alt="Evolart Image 2" onclick="openLightbox(this.src)">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Expanded Gallery Image">
+  </div>
+
+  <script>
+    function openLightbox(imageSrc){
+      document.getElementById("lightbox").classList.add("active");
+      document.getElementById("lightbox-img").src = imageSrc;
+    }
+
+    function closeLightbox(){
+      document.getElementById("lightbox").classList.remove("active");
+      document.getElementById("lightbox-img").src = "";
+    }
+
+    document.getElementById("lightbox").addEventListener("click", function(e){
+      if(e.target.id === "lightbox" || e.target.classList.contains("close-lightbox")){
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", function(e){
+      if(e.key === "Escape"){
+        closeLightbox();
+      }
+    });
+  </script>
+
+</body>
+</html>

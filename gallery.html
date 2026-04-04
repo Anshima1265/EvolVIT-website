@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gallery - Evolvit Club</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌌 BACKGROUND */
+body{
+  background:
+    radial-gradient(circle at 20% 30%, rgba(106,13,173,0.4), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(76,201,240,0.2), transparent 40%),
+    linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  font-family:'Poppins', sans-serif;
+  margin:0;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+/* TITLE */
+h1{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:50px;
+  animation:fadeIn 1s ease;
+}
+
+/* SECTION */
+.gallery-section{
+  margin-bottom:80px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-size:30px;
+  color:#b388ff;
+  margin-bottom:25px;
+  text-align:center;
+}
+
+/* GRID */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+/* IMAGE */
+.image-box{
+  width:100%;
+  height:280px;
+  border-radius:22px;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.4s;
+  animation:fadeUp 0.8s ease;
+}
+
+/* 🔥 HOVER GLOW */
+.image-box:hover{
+  transform:scale(1.05);
+  box-shadow:
+    0 0 10px #4cc9f0,
+    0 0 30px #4cc9f0,
+    0 0 60px #6a0dad;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:16px;
+  box-shadow:
+    0 0 20px #4cc9f0,
+    0 0 50px #6a0dad;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+/* BUTTON */
+.back-btn{
+  display:block;
+  margin:50px auto 0;
+  padding:14px 28px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.08);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <h3>Evolvit Club</h3>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <h1>📸 Gallery</h1>
+
+  <!-- 🎨 EVOLART -->
+  <div class="gallery-section">
+    <div class="section-title">🎨 EVOLART</div>
+
+    <div class="gallery-grid">
+      <img src="images/evolart1.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/evolart2.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/evolart3.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/evolart4.jpeg" class="image-box" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <!-- 🏭 INDUSTRIAL VISIT -->
+  <div class="gallery-section">
+    <div class="section-title">🏭 Industrial Visit – Appointy</div>
+
+    <div class="gallery-grid">
+      <img src="images/ivisit1.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/ivisit2.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/ivisit3.jpeg" class="image-box" onclick="openLightbox(this.src)">
+      <img src="images/ivisit4.jpeg" class="image-box" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <button class="back-btn" onclick="window.location.href='explore.html'">
+    ← Back to Explore
+  </button>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById("lightbox").classList.add("active");
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

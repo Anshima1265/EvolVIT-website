@@ -3,12 +3,165 @@
 <head>
 <title>Contact</title>
 <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* 🌌 BACKGROUND */
+body{
+  background:
+    linear-gradient(rgba(0, 170, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 170, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at 20% 30%, rgba(106,13,173,0.4), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(76,201,240,0.2), transparent 40%),
+    linear-gradient(180deg,#05070f,#0b0f1a);
+
+  background-size:50px 50px;
+  color:#eaeaff;
+  font-family:'Poppins', sans-serif;
+  margin:0;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+/* TITLE */
+h1{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:50px;
+  color:#14c8ff;
+}
+
+/* CONTACT CARD */
+.contact-card{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:20px 25px;
+  border-radius:18px;
+  margin-bottom:25px;
+
+  background:rgba(20,25,45,0.6);
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.3s;
+}
+
+/* HOVER EFFECT */
+.contact-card:hover{
+  transform:translateY(-5px);
+  box-shadow:
+    0 0 15px #4cc9f0,
+    0 0 35px rgba(76,201,240,0.3);
+}
+
+/* ICON */
+.icon{
+  font-size:28px;
+}
+
+/* TEXT */
+.contact-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.contact-text span{
+  font-size:14px;
+  color:#9aa3c7;
+}
+
+.contact-text strong{
+  font-size:18px;
+  color:white;
+}
+
+/* BACK BUTTON */
+.back-btn{
+  display:block;
+  width:max-content;
+  margin:50px auto 0;
+  padding:14px 28px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 30px rgba(76,201,240,0.4);
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
-<h1>Contact</h1>
-<p>Email: evolvitclub@email.com</p>
+
+<h1>📞 Contact Us</h1>
+
+<!-- EMAIL -->
+<div class="contact-card">
+  <div class="icon">📧</div>
+  <div class="contact-text">
+    <span>Email</span>
+    <strong>evolvitclub@email.com</strong>
+  </div>
+</div>
+
+<!-- PHONE -->
+<div class="contact-card">
+  <div class="icon">📱</div>
+  <div class="contact-text">
+    <span>Contact Number</span>
+    <strong>+91 XXXXX XXXXX</strong>
+  </div>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="contact-card">
+  <div class="icon">📸</div>
+  <div class="contact-text">
+    <span>Instagram</span>
+    <strong>@evolvit_club</strong>
+  </div>
+</div>
+
+<!-- LINKEDIN -->
+<div class="contact-card">
+  <div class="icon">💼</div>
+  <div class="contact-text">
+    <span>LinkedIn</span>
+    <strong>EvolVIT Club</strong>
+  </div>
+</div>
+
+<!-- LOCATION -->
+<div class="contact-card">
+  <div class="icon">📍</div>
+  <div class="contact-text">
+    <span>Location</span>
+    <strong>
+      VIT Bhopal University<br>
+      Kothri Kalan, Sehore - 466114<br>
+      Madhya Pradesh, India
+    </strong>
+  </div>
+</div>
+
+<!-- BACK BUTTON -->
+<a href="explore.html" class="back-btn">← Back to Explore</a>
+
 </div>
 
 </body>

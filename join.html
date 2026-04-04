@@ -1,33 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Join</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join - Evolvit Club</title>
 
-<style>
-.center-box{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-.card{
-  text-align:center;
-  padding:40px;
-  border-radius:20px;
-}
-</style>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    /* 🌌 BACKGROUND */
+    body{
+      font-family:'Poppins', sans-serif;
+      color:#eaf2ff;
+
+      background:
+        linear-gradient(rgba(0, 170, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 170, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 20% 20%, rgba(106, 13, 173, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 25%, rgba(0, 162, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(0, 162, 255, 0.10), transparent 35%),
+        linear-gradient(180deg, #02050d, #060a14 45%, #04070f 100%);
+
+      background-size:48px 48px, 48px 48px, cover;
+
+      /* ✅ SCROLL FIX */
+      min-height:100vh;
+      overflow-x:hidden;
+      overflow-y:auto;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px 20px;
+    }
+
+    /* WRAPPER */
+    .page-wrap{
+      width:100%;
+      max-width:900px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    /* 🔙 BACK BUTTON */
+    .top-back{
+      text-decoration:none;
+      color:white;
+      padding:12px 22px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.2);
+      margin-bottom:40px;
+      transition:0.3s;
+    }
+
+    .top-back:hover{
+      box-shadow:0 0 15px #4cc9f0;
+    }
+
+    /* CARD */
+    .card{
+      width:100%;
+      max-width:600px;
+      padding:50px 40px;
+      border-radius:24px;
+      text-align:center;
+
+      background:rgba(20, 25, 45, 0.6);
+      backdrop-filter:blur(15px);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.5),
+        0 0 30px rgba(76,201,240,0.1);
+    }
+
+    /* LOCK ICON */
+    .lock{
+      font-size:55px;
+      margin-bottom:20px;
+    }
+
+    /* TITLE */
+    .card h1{
+      font-family:'Orbitron', sans-serif;
+      font-size:38px;
+      color:#14c8ff;
+      margin-bottom:20px;
+
+      text-shadow:
+        0 0 10px #14c8ff,
+        0 0 30px rgba(20,200,255,0.3);
+    }
+
+    /* TEXT */
+    .main-text{
+      font-size:18px;
+      line-height:1.7;
+      margin-bottom:25px;
+      color:#d6def5;
+    }
+
+    /* STAY TUNED */
+    .badge{
+      display:inline-block;
+      padding:10px 25px;
+      border-radius:30px;
+      border:1px solid #14c8ff;
+      color:#14c8ff;
+      margin-bottom:30px;
+      letter-spacing:2px;
+      font-size:14px;
+    }
+
+    .sub-text{
+      font-size:16px;
+      color:#c2c8de;
+      margin-bottom:35px;
+    }
+
+    /* HOME BUTTON */
+    .home-btn{
+      text-decoration:none;
+      padding:14px 26px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .home-btn:hover{
+      box-shadow:0 0 15px #4cc9f0;
+      transform:translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px){
+      .card{
+        padding:35px 20px;
+      }
+
+      .card h1{
+        font-size:28px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="center-box">
-  <div class="card">
-    <h1>🚫 Registrations Closed</h1>
-    <p>We’ll open soon. Stay tuned!</p>
+  <div class="page-wrap">
+
+    <a href="index.html" class="top-back">← Back</a>
+
+    <div class="card">
+
+      <div class="lock">🔒</div>
+
+      <h1>Registrations Closed</h1>
+
+      <p class="main-text">
+        Applications for the current cycle have closed. We appreciate your interest in EvolVIT!
+      </p>
+
+      <div class="badge">STAY TUNED</div>
+
+      <p class="sub-text">
+        Future openings will be announced on our social channels. Keep an eye out!
+      </p>
+
+      <a href="index.html" class="home-btn">← BACK TO HOME</a>
+
+    </div>
+
   </div>
-</div>
 
 </body>
 </html>

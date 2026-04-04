@@ -3,12 +3,119 @@
 <head>
 <title>Upcoming Events</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* 🌌 BACKGROUND */
+body{
+  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+              linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  font-family:'Poppins', sans-serif;
+  margin:0;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:120px 20px;
+  text-align:center;
+}
+
+/* CARD */
+.empty-card{
+  background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+  padding:50px;
+  border-radius:28px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* GLOW BORDER */
+.empty-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  padding:2px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+/* TEXT */
+.empty-card h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+.empty-card p{
+  font-size:18px;
+  color:#cfd3ff;
+  line-height:1.8;
+  margin-bottom:12px;
+}
+
+/* ICON */
+.icon{
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+/* BUTTON */
+.back-btn{
+  margin-top:25px;
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.05);
+}
+
+</style>
 </head>
+
 <body>
 
+<header>
+  <div class="nav">
+    <h3>Evolvit Club</h3>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+    </div>
+  </div>
+</header>
+
 <div class="container">
-<h1>Upcoming Events</h1>
-<div class="card">AI Workshop</div>
+
+  <div class="empty-card">
+
+    <div class="icon">📅✨</div>
+
+    <h1>No Upcoming Events</h1>
+
+    <p>We’re currently planning something exciting for you 🚀</p>
+    <p>Stay tuned — amazing events are coming soon!</p>
+    <p>We’ll update this section very soon 👀</p>
+
+    <button class="back-btn" onclick="window.location.href='explore.html'">
+      ← Back to Explore
+    </button>
+
+  </div>
+
 </div>
 
 </body>

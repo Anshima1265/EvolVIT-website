@@ -1,14 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FAQ</title>
+<title>FAQ - Evolvit Club</title>
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* 🌌 BACKGROUND */
+body{
+  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+              linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  font-family:'Poppins', sans-serif;
+  margin:0;
+}
+
+/* CONTAINER */
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+/* TITLE */
+h1{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:40px;
+}
+
+/* FAQ CARD */
+.faq-card{
+  background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+  padding:20px 25px;
+  border-radius:18px;
+  margin-bottom:18px;
+  position:relative;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* GLOW BORDER */
+.faq-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:18px;
+  padding:2px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+/* QUESTION */
+.question{
+  font-size:18px;
+  font-weight:600;
+  color:#ffffff;
+  margin-bottom:8px;
+}
+
+/* ANSWER */
+.answer{
+  font-size:15px;
+  color:#cfd3ff;
+  line-height:1.7;
+}
+
+/* BUTTON */
+.back-btn{
+  display:block;
+  margin:40px auto 0;
+  padding:14px 24px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.05);
+}
+
+</style>
 </head>
+
 <body>
 
+<header>
+  <div class="nav">
+    <h3>Evolvit Club</h3>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+    </div>
+  </div>
+</header>
+
 <div class="container">
-<h1>FAQ</h1>
-<p>How to join? Wait for registration.</p>
+
+  <h1>❓ Frequently Asked Questions</h1>
+
+  <!-- FAQ 1 -->
+  <div class="faq-card">
+    <div class="question">👥 Who can join EvolVIT Club?</div>
+    <div class="answer">
+      Any student with an interest in technology, innovation, design, or research can join the club.
+    </div>
+  </div>
+
+  <!-- FAQ 2 -->
+  <div class="faq-card">
+    <div class="question">📝 How can I join the club?</div>
+    <div class="answer">
+      Registrations open during recruitment phases. Keep an eye on announcements and updates from the club.
+    </div>
+  </div>
+
+  <!-- FAQ 3 -->
+  <div class="faq-card">
+    <div class="question">🚀 What kind of events does EvolVIT organize?</div>
+    <div class="answer">
+      We organize hackathons, ideathons, workshops, industrial visits, and creative competitions.
+    </div>
+  </div>
+
+  <!-- FAQ 4 -->
+  <div class="faq-card">
+    <div class="question">💻 Do I need technical knowledge to join?</div>
+    <div class="answer">
+      Not necessarily. Beginners are always welcome! We provide opportunities to learn and grow.
+    </div>
+  </div>
+
+  <!-- FAQ 5 -->
+  <div class="faq-card">
+    <div class="question">🏆 What are the benefits of joining?</div>
+    <div class="answer">
+      You gain practical experience, teamwork skills, exposure to real-world projects, and networking opportunities.
+    </div>
+  </div>
+
+  <!-- FAQ 6 -->
+  <div class="faq-card">
+    <div class="question">📅 How often are events conducted?</div>
+    <div class="answer">
+      Events are conducted regularly throughout the semester depending on schedules and collaborations.
+    </div>
+  </div>
+
+  <!-- BACK BUTTON -->
+  <button class="back-btn" onclick="window.location.href='explore.html'">
+    ← Back to Explore
+  </button>
+
 </div>
 
 </body>

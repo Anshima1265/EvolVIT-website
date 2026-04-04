@@ -15,6 +15,13 @@ body{
   overflow-x:hidden;
 }
 
+/* CONTAINER */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
 /* HEADING */
 h1{
   text-align:center;
@@ -82,7 +89,7 @@ h1{
   z-index:1;
 }
 
-/* 🔥 GLOW ANIMATED BORDER */
+/* 🔥 GLOW BORDER */
 .member-card::before{
   content:"";
   position:absolute;
@@ -97,7 +104,6 @@ h1{
   z-index:0;
 }
 
-/* INNER MASK (so glow looks ring-like) */
 .member-card::after{
   content:"";
   position:absolute;
@@ -111,7 +117,6 @@ h1{
   z-index:0;
 }
 
-/* ANIMATION */
 @keyframes rotate{
   0%{transform:translateX(-50%) rotate(0deg);}
   100%{transform:translateX(-50%) rotate(360deg);}
@@ -127,6 +132,25 @@ h1{
 .member-card p{
   font-size:14px;
   color:#b8c1ff;
+}
+
+/* 🔙 BACK BUTTON */
+.back-btn{
+  display:block;
+  width:max-content;
+  margin:50px auto 0;
+  padding:14px 28px;
+  border-radius:30px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.back-btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 10px 30px rgba(76,201,240,0.4);
 }
 
 </style>
@@ -236,10 +260,8 @@ h1{
 </div>
 </div>
 
-</div>
-
-</body>
-</html>
+<!-- 🔙 BACK BUTTON -->
+<a href="explore.html" class="back-btn">← Back to Explore</a>
 
 </div>
 

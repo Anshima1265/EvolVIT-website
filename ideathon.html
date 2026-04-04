@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>IDEATHON - Evolvit Club</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+body{
+  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
+              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
+              linear-gradient(180deg,#05070f,#0b0f1a);
+  color:#eaeaff;
+  font-family:'Poppins', sans-serif;
+  margin:0;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:100px 20px;
+}
+
+.hero-card{
+  background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+  border-radius:28px;
+  padding:40px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,0.45);
+  margin-bottom:35px;
+}
+
+.hero-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:28px;
+  padding:2px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+.hero-card h1{
+  font-size:50px;
+  margin:0 0 12px;
+  color:#ffffff;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.hero-card p.subtitle{
+  text-align:center;
+  font-size:22px;
+  font-weight:500;
+  color:#cfd3ff;
+  margin-top:10px;
+  text-shadow:0 0 10px rgba(179,136,255,0.4);
+  position:relative;
+  z-index:1;
+}
+
+.content-card{
+  background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
+  border-radius:24px;
+  padding:32px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+.content-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:24px;
+  padding:2px;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+
+.section-title{
+  font-size:28px;
+  color:#b388ff;
+  margin-bottom:18px;
+  position:relative;
+  z-index:1;
+}
+
+.content-card p{
+  color:#d8dcff;
+  line-height:1.9;
+  font-size:17px;
+  margin-bottom:18px;
+  position:relative;
+  z-index:1;
+}
+
+.winners-box{
+  margin-top:28px;
+  background:rgba(255,255,255,0.04);
+  border-radius:20px;
+  padding:24px;
+  position:relative;
+  z-index:1;
+}
+
+.winners-box h3{
+  margin:0 0 16px;
+  color:#ffffff;
+  font-size:24px;
+}
+
+.winner-item{
+  margin-bottom:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,0.03);
+  color:#d8dcff;
+  line-height:1.8;
+}
+
+.details-box{
+  margin-top:28px;
+  background:rgba(255,255,255,0.04);
+  border-radius:20px;
+  padding:22px;
+  position:relative;
+  z-index:1;
+}
+
+.details-box h3{
+  margin-top:0;
+  color:#ffffff;
+  font-size:22px;
+}
+
+.details-box p{
+  margin:10px 0;
+  font-size:16px;
+  color:#d8dcff;
+}
+
+.back-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 24px;
+  border-radius:30px;
+  border:none;
+  color:white;
+  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+  cursor:pointer;
+  transition:0.3s;
+  position:relative;
+  z-index:2;
+}
+
+.back-btn:hover{
+  transform:translateY(-3px) scale(1.02);
+}
+
+@media(max-width:700px){
+  .hero-card h1{
+    font-size:36px;
+  }
+
+  .hero-card p.subtitle{
+    font-size:19px;
+  }
+
+  .content-card{
+    padding:24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <h3>Evolvit Club</h3>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="explore.html">Explore</a>
+      <a href="past-events.html">Past Events</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="hero-card">
+    <h1>💡 IDEATHON</h1>
+    <p class="subtitle">IDEA TO INDUSTRY’26</p>
+  </div>
+
+  <div class="content-card">
+    <div class="section-title">About the Event</div>
+
+    <p>
+      <strong>IDEATHON – IDEA TO INDUSTRY’26</strong> was an innovative event organized by the
+      <strong>EvolVIT Club</strong>, aimed at transforming creative ideas into practical,
+      real-world solutions.
+    </p>
+
+    <p>
+      Conducted in <strong>February 2026</strong>, the event provided a dynamic
+      <strong>online platform</strong> for students to think beyond boundaries and develop ideas
+      with strong industrial relevance.
+    </p>
+
+    <p>
+      Participants showcased their problem-solving abilities by presenting unique and impactful
+      concepts, focusing on innovation, feasibility, and real-world applications.
+      The event encouraged critical thinking, collaboration, and an entrepreneurial mindset
+      among students.
+    </p>
+
+    <p>
+      IDEATHON successfully bridged the gap between ideas and industry-driven solutions,
+      reflecting EvolVIT’s vision of fostering innovation and technological growth. 🚀
+    </p>
+
+    <div class="winners-box">
+      <h3>🏆 Winners</h3>
+
+      <div class="winner-item">
+        🏆 <strong>Winner: Aditi Singh</strong> – Setting a high bar with an innovative approach to
+        <strong>“Transforming MSME Commerce: From Uncertainty to Intelligent Trust”</strong>
+      </div>
+
+      <div class="winner-item">
+        🥈 <strong>1st Runner-Up: Anshima</strong> – Exceptional execution and clarity of vision
+      </div>
+
+      <div class="winner-item">
+        🥉 <strong>2nd Runner-Up: Shambhavi Dixit</strong> – A creative solution that stood out for its practical impact
+      </div>
+    </div>
+
+    <div class="details-box">
+      <h3>✨ Event Details</h3>
+      <p>📍 <strong>Venue:</strong> Online</p>
+      <p>📅 <strong>Date:</strong> February 2026</p>
+    </div>
+
+    <button class="back-btn" onclick="window.location.href='past-events.html'">
+      ← Back to Past Events
+    </button>
+  </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

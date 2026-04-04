@@ -1,144 +1,345 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Evolvit Club</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evolvit Club</title>
+  <link rel="stylesheet" href="css/style.css">
 
-<style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-/* 🌌 BACKGROUND */
-body{
-  background: radial-gradient(circle at 20% 30%, #6a0dad, transparent 40%),
-              radial-gradient(circle at 80% 70%, #0b1a3a, transparent 40%),
-              linear-gradient(180deg,#05070f,#0b0f1a);
-  color:#eaeaff;
-  font-family:'Poppins',sans-serif;
-  overflow:hidden;
-}
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-/* HERO SECTION */
-.hero{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-}
+    body{
+      min-height:100vh;
+      color:#eaeaff;
+      font-family:'Poppins', sans-serif;
+      overflow-x:hidden;
+      background:
+        linear-gradient(rgba(0, 180, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(circle at 20% 20%, rgba(106, 13, 173, 0.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(0, 140, 255, 0.18), transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(76, 201, 240, 0.10), transparent 30%),
+        linear-gradient(180deg, #040711, #070b16 45%, #05070f 100%);
+      background-size: 42px 42px, 42px 42px, cover, cover, cover, cover;
+    }
 
-/* GLOW BALLS */
-.hero::before{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:#6a0dad;
-  filter:blur(120px);
-  top:10%;
-  left:10%;
-  animation:move 8s infinite alternate;
-}
+    header{
+      width:100%;
+      position:relative;
+      z-index:10;
+    }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:#4cc9f0;
-  filter:blur(120px);
-  bottom:10%;
-  right:10%;
-  animation:move 10s infinite alternate;
-}
+    .nav{
+      width:100%;
+      max-width:1200px;
+      margin:auto;
+      padding:22px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-@keyframes move{
-  from{transform:translate(0,0);}
-  to{transform:translate(100px,80px);}
-}
+    .nav h3{
+      font-size:24px;
+      color:#ffffff;
+      font-weight:600;
+      letter-spacing:1px;
+    }
 
-/* TITLE */
-.hero h1{
-  font-size:60px;
-  letter-spacing:2px;
-  margin-bottom:10px;
-}
+    .menu{
+      display:flex;
+      gap:28px;
+    }
 
-/* SUBTITLE */
-.hero p{
-  font-size:18px;
-  color:#b8c1ff;
-  margin-bottom:30px;
-}
+    .menu a{
+      color:#dfe6ff;
+      text-decoration:none;
+      font-size:16px;
+      transition:0.3s ease;
+    }
 
-/* BUTTONS */
-.buttons button{
-  margin:10px;
-  padding:14px 30px;
-  border-radius:30px;
-  border:none;
-  cursor:pointer;
-  font-size:16px;
-  transition:0.3s;
-}
+    .menu a:hover{
+      color:#4cc9f0;
+    }
 
-/* PRIMARY BUTTON */
-.explore-btn{
-  background:linear-gradient(90deg,#6a0dad,#4cc9f0);
-  color:white;
-}
+    /* HERO */
+    .hero{
+      min-height:calc(100vh - 80px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px 40px 40px;
+      position:relative;
+    }
 
-.explore-btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px rgba(106,13,173,0.8);
-}
+    .hero-container{
+      width:100%;
+      max-width:1200px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:50px;
+    }
 
-/* SECONDARY BUTTON */
-.join-btn{
-  background:transparent;
-  border:1px solid #6a0dad;
-  color:white;
-}
+    /* LEFT TEXT */
+    .hero-text{
+      flex:1;
+    }
 
-.join-btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px rgba(76,201,240,0.6);
-}
+    .line1,
+    .line2,
+    .line3,
+    .line4{
+      display:block;
+    }
 
-/* SCROLL ANIMATION */
-.fade-in{
-  opacity:0;
-  transform:translateY(40px);
-  animation:fadeUp 1s forwards;
-}
+    .line1{
+      font-family:'Orbitron', sans-serif;
+      font-size:84px;
+      font-weight:800;
+      line-height:1;
+      color:#13c7ff;
+      letter-spacing:4px;
+      text-shadow:
+        0 0 6px rgba(19, 199, 255, 0.7),
+        0 0 14px rgba(19, 199, 255, 0.6),
+        0 0 28px rgba(19, 199, 255, 0.45);
+      animation: neonGlow 2s ease-in-out infinite alternate;
+    }
 
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    .line2{
+      font-family:'Poppins', sans-serif;
+      font-size:48px;
+      font-weight:600;
+      letter-spacing:14px;
+      color:#f2f2f2;
+      margin-top:18px;
+      margin-left:8px;
+    }
 
-</style>
+    .line3{
+      font-size:20px;
+      font-weight:400;
+      letter-spacing:5px;
+      color:#10bfff;
+      margin-top:20px;
+      margin-left:4px;
+    }
+
+    .line4{
+      font-size:19px;
+      font-weight:300;
+      color:#cfcfe4;
+      margin-top:38px;
+      line-height:1.8;
+      max-width:620px;
+    }
+
+    /* BUTTONS */
+    .hero-buttons{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-top:35px;
+    }
+
+    .hero-buttons button{
+      padding:14px 32px;
+      border:none;
+      border-radius:30px;
+      background:linear-gradient(90deg,#6a0dad,#4cc9f0);
+      color:white;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:600;
+      transition:0.3s ease;
+      box-shadow:0 8px 25px rgba(76, 201, 240, 0.18);
+    }
+
+    .hero-buttons button:hover{
+      transform:scale(1.05);
+    }
+
+    .hero-buttons a{
+      color:#ffffff;
+      text-decoration:none;
+      font-size:18px;
+      font-weight:600;
+      transition:0.3s ease;
+    }
+
+    .hero-buttons a:hover{
+      color:#4cc9f0;
+    }
+
+    /* RIGHT IMAGE */
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:430px;
+      border-radius:24px;
+      object-fit:cover;
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.55),
+        0 0 25px rgba(19, 199, 255, 0.10);
+    }
+
+    /* NEON ANIMATION */
+    @keyframes neonGlow{
+      0%{
+        text-shadow:
+          0 0 6px rgba(19, 199, 255, 0.6),
+          0 0 14px rgba(19, 199, 255, 0.5),
+          0 0 24px rgba(19, 199, 255, 0.35);
+      }
+      100%{
+        text-shadow:
+          0 0 10px rgba(19, 199, 255, 0.95),
+          0 0 22px rgba(19, 199, 255, 0.85),
+          0 0 42px rgba(19, 199, 255, 0.7),
+          0 0 65px rgba(19, 199, 255, 0.45);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px){
+      .hero-container{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .line1{
+        font-size:64px;
+      }
+
+      .line2{
+        font-size:38px;
+        letter-spacing:10px;
+        margin-left:0;
+      }
+
+      .line3{
+        font-size:18px;
+        letter-spacing:3px;
+        margin-left:0;
+      }
+
+      .line4{
+        font-size:18px;
+        max-width:600px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+    }
+
+    @media (max-width: 600px){
+      .nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+      }
+
+      .menu{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero{
+        padding:20px 20px 40px;
+      }
+
+      .line1{
+        font-size:46px;
+        letter-spacing:2px;
+      }
+
+      .line2{
+        font-size:28px;
+        letter-spacing:7px;
+        margin-top:14px;
+      }
+
+      .line3{
+        font-size:14px;
+        letter-spacing:2px;
+        margin-top:16px;
+      }
+
+      .line4{
+        font-size:16px;
+        margin-top:26px;
+        line-height:1.7;
+      }
+
+      .hero-buttons{
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .hero-image img{
+        max-width:300px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="hero">
-  <div class="fade-in">
-
-    <h1>EVOLVIT CLUB 🚀</h1>
-
-    <p>Evolving Students into Real-World Innovators</p>
-
-    <div class="buttons">
-      <button class="explore-btn" onclick="goToPage('explore.html')">Explore</button>
-      <button class="join-btn" onclick="goToPage('join.html')">Join Now</button>
+  <header>
+    <div class="nav">
+      <h3>Evolvit Club</h3>
+      <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="members.html">Members</a>
+      </div>
     </div>
+  </header>
 
-  </div>
-</div>
+  <section class="hero">
+    <div class="hero-container">
 
-<script src="js/script.js"></script>
+      <div class="hero-text">
+        <span class="line1">EvolVIT</span>
+        <span class="line2">CLUB</span>
+        <span class="line3">VIT BHOPAL UNIVERSITY</span>
+        <span class="line4">Evolving minds. Building futures. One innovation at a time.</span>
+
+        <div class="hero-buttons">
+          <button onclick="window.location.href='explore.html'">Explore</button>
+          <a href="join.html">Join Now</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/hero.jpeg" alt="Evolvit Club Hero Image">
+      </div>
+
+    </div>
+  </section>
 
 </body>
 </html>

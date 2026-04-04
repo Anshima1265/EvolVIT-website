@@ -1,0 +1,47 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#070a14,#0b0f1a);
+  color:#e6ebff;
+}
+
+header{
+  background:#12182a;
+  padding:15px;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+}
+
+.card{
+  background:#12182a;
+  padding:25px;
+  margin:15px 0;
+  border-radius:15px;
+  cursor:pointer;
+}
+
+.card:hover{
+  border:1px solid #6c8cff;
+}
+
+.members{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.member-card{
+  background:#1a2138;
+  padding:10px;
+  border-radius:10px;
+}

@@ -18,7 +18,7 @@ body{
 
 /* CONTAINER */
 .container{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   padding:100px 20px;
 }
@@ -34,29 +34,29 @@ h1{
 .subtitle{
   text-align:center;
   color:#cfd3ff;
-  margin-bottom:50px;
+  margin-bottom:60px;
   font-size:18px;
 }
 
-/* GRID → NOW SINGLE COLUMN */
+/* GRID */
 .events-grid{
   display:grid;
-  grid-template-columns:1fr;   /* ✅ 1 column */
-  gap:30px;
-  max-width:700px;            /* center nicely */
+  grid-template-columns:1fr;
+  gap:35px;
+  max-width:850px;   /* ✅ wider */
   margin:0 auto;
 }
 
 /* CARD */
 .event-card{
   background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
-  padding:40px;
-  border-radius:22px;
+  padding:50px;                     /* ✅ bigger padding */
+  border-radius:26px;
   text-align:center;
   transition:0.4s;
   position:relative;
   overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  box-shadow:0 12px 35px rgba(0,0,0,0.5);
   cursor:pointer;
 }
 
@@ -65,7 +65,7 @@ h1{
   content:"";
   position:absolute;
   inset:0;
-  border-radius:22px;
+  border-radius:26px;
   padding:2px;
   background:linear-gradient(90deg,#6a0dad,#4cc9f0,#b388ff);
   -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
@@ -74,30 +74,32 @@ h1{
   pointer-events:none;
 }
 
-/* 🔥 HOVER EFFECT */
+/* 🔥 HOVER */
 .event-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 25px 50px rgba(0,0,0,0.7);
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.7),
+    0 0 20px rgba(76,201,240,0.2);
 }
 
 /* TEXT */
 .event-card h2{
   color:#b388ff;
-  margin-bottom:15px;
-  font-size:24px;
+  margin-bottom:18px;
+  font-size:26px;
 }
 
 .event-card p{
   color:#c8ccff;
-  font-size:16px;
-  line-height:1.7;
+  font-size:17px;
+  line-height:1.8;
 }
 
 /* 🔙 BACK BUTTON */
 .back-btn{
   display:block;
-  margin:60px auto 0;
-  padding:14px 28px;
+  margin:70px auto 0;
+  padding:14px 32px;
   border:none;
   border-radius:30px;
   background:linear-gradient(90deg,#6a0dad,#4cc9f0);
@@ -105,10 +107,12 @@ h1{
   font-size:16px;
   cursor:pointer;
   transition:0.3s;
+  box-shadow:0 10px 25px rgba(76,201,240,0.2);
 }
 
 .back-btn:hover{
-  transform:scale(1.05);
+  transform:scale(1.07);
+  box-shadow:0 15px 35px rgba(76,201,240,0.35);
 }
 
 /* RESPONSIVE */
@@ -118,7 +122,11 @@ h1{
   }
 
   .event-card{
-    padding:28px;
+    padding:30px;
+  }
+
+  .events-grid{
+    max-width:100%;
   }
 }
 
@@ -171,6 +179,11 @@ h1{
   <button class="back-btn" onclick="window.location.href='explore.html'">
     ← Back to Explore
   </button>
+
+</div>
+
+</body>
+</html>
 
 </div>
 

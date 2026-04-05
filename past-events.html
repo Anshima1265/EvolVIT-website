@@ -34,21 +34,23 @@ h1{
 .subtitle{
   text-align:center;
   color:#cfd3ff;
-  margin-bottom:40px;
+  margin-bottom:50px;
   font-size:18px;
 }
 
-/* GRID */
+/* GRID → NOW SINGLE COLUMN */
 .events-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:1fr;   /* ✅ 1 column */
   gap:30px;
+  max-width:700px;            /* center nicely */
+  margin:0 auto;
 }
 
 /* CARD */
 .event-card{
   background:linear-gradient(145deg,#0b1a3a,#1a0d2e);
-  padding:30px;
+  padding:40px;
   border-radius:22px;
   text-align:center;
   transition:0.4s;
@@ -74,27 +76,27 @@ h1{
 
 /* 🔥 HOVER EFFECT */
 .event-card:hover{
-  transform:translateY(-10px) scale(1.04);
+  transform:translateY(-10px) scale(1.03);
   box-shadow:0 25px 50px rgba(0,0,0,0.7);
 }
 
 /* TEXT */
 .event-card h2{
   color:#b388ff;
-  margin-bottom:12px;
-  font-size:22px;
+  margin-bottom:15px;
+  font-size:24px;
 }
 
 .event-card p{
   color:#c8ccff;
-  font-size:14px;
-  line-height:1.6;
+  font-size:16px;
+  line-height:1.7;
 }
 
 /* 🔙 BACK BUTTON */
 .back-btn{
   display:block;
-  margin:50px auto 0;
+  margin:60px auto 0;
   padding:14px 28px;
   border:none;
   border-radius:30px;
@@ -110,15 +112,13 @@ h1{
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .events-grid{
-    grid-template-columns:repeat(2,1fr);
+@media(max-width:600px){
+  h1{
+    font-size:36px;
   }
-}
 
-@media(max-width:500px){
-  .events-grid{
-    grid-template-columns:1fr;
+  .event-card{
+    padding:28px;
   }
 }
 
